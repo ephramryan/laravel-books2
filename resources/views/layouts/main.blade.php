@@ -22,8 +22,13 @@
 
     @yield('content')
 
+    <div id="partners">
 
+    </div>
+
+    @viteReactRefresh
     @vite('resources/css/app.scss')
+    @vite('resources/js/partners.jsx')
 
 </body>
 </html>
