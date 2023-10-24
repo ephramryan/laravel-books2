@@ -3,3 +3,41 @@
 body {
     background-color: rgb(218, 238, 192);
 }
+
+.highlighted {
+    font-size: 1.2rem;
+    color: blue;
+}
+
+
+li {
+    display: flex;
+    list-style: none;
+    padding: 0.5em;
+}
+
+li img {
+    order: -1;
+    width: 4em;
+    margin-right: 1em;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+.loader {
+    width: 5em;
+    height: 5em;
+    background:
+        transparent
+        url('https://classes.codingbootcamp.cz/assets/classes/1478/kisspng-lolcat-kitten-pet-5afe4a36c9ec56.1433183815266145828271.png')
+        center/contain
+        no-repeat scroll;
+    animation: rotation 1s infinite linear;
+}

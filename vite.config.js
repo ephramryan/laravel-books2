@@ -10,7 +10,8 @@ export default ({ mode }) => {
             laravel({
                 input: [
                     'resources/css/app.scss',
-                    'resources/js/partners.jsx'
+                    'resources/js/partners.jsx',
+                    'resources/js/latest-books.js'
                 ],
                 refresh: true,
             }),

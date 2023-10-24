@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\TestController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
@@ -21,3 +22,8 @@ Route::get('/', function () {
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
 Route::get('/about-us', [AboutController::class,'about'])->name('about');
+
+Route::get('/api/test/array', [TestController::class, 'arrayResponse'])->name('array.response');
+Route::get('/api/test/model', [TestController::class, 'modelResponse'])->name('model.response');
+Route::get('/api/test/collection', [TestController::class, 'collectionResponse'])->name('collection.response');
+

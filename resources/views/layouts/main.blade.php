@@ -6,12 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My awesome books store</title>
 
-    <style>
-        .highlighted {
-            font-size: 1.2rem;
-            color: blue;
-        }
-    </style>
+    @vite('resources/css/app.scss')
 
 </head>
 <body>
@@ -26,9 +21,15 @@
 
     </div>
 
+
+    <div id="latest-books">
+
+    </div>
+
     @viteReactRefresh
-    @vite('resources/css/app.scss')
     @vite('resources/js/partners.jsx')
+
+    @vite('resources/js/latest-books.js')
 
 </body>
 </html>
