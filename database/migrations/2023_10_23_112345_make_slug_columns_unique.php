@@ -11,17 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('authors', function (Blueprint $table) {
-            $table->unique('slug');
-        });
+        // Schema::table('authors', function (Blueprint $table) {
+        //     $table->unique('slug');
+        // });
 
-        Schema::table('categories', function (Blueprint $table) {
-            $table->unique('slug');
-        });
+        // Schema::table('categories', function (Blueprint $table) {
+        //     $table->unique('slug');
+        // });
 
-        Schema::table('publishers', function (Blueprint $table) {
-            $table->unique('slug');
-        });
+        // Schema::table('publishers', function (Blueprint $table) {
+        //     $table->unique('slug');
+        // });
     }
 
     /**

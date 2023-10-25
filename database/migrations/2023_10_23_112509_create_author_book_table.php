@@ -11,17 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('author_book', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('author_id');
-            $table->foreignId('book_id');
-            $table->timestamps();
+        // Schema::create('author_book', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->foreignId('author_id');
+        //     $table->foreignId('book_id');
+        //     $table->timestamps();
 
-            // multiple column names in [] mean that
-            // it is the COMBINATION of their values
-            // that will have to be unique
-            $table->unique(['author_id', 'book_id']);
-        });
+        //     // multiple column names in [] mean that
+        //     // it is the COMBINATION of their values
+        //     // that will have to be unique
+        //     $table->unique(['author_id', 'book_id']);
+        // });
     }
 
     /**

@@ -9,8 +9,13 @@
 
     <p>My book store is the best one ever</p>
 
-
-
+    @foreach ($crime_books as $book)
+        <div class="book">
+            <h3>{{$book->title}}</h3>
+            <p>{{$book->price}}</p>
+            <p>{{$book->authors->pluck('name')->join(', ')}}</p>
+        </div>
+    @endforeach
 
 
 @endsection
