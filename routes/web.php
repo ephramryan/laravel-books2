@@ -2,10 +2,16 @@
 
 use App\Http\Controllers\Api\TestController;
 use App\Http\Controllers\Api\BookController;
+use App\Http\Controllers\Admin\BookController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ReviewController;
+
+use App\Models\User;
+
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,3 +46,21 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/book/{book_id}/review', [ReviewController::class, 'reviewBook'])->name('book.review');
 
 });
+
+// all admin routes
+Route::group([
+    'middleware' => 'can:admin'  // * settings of the group
+], function() {
+
+    // any routes defined in here will automatically get the settings (*) from the group
+
+    Route::get('/admin/books', [BookController::class, 'index']);
+
+    Route::get('/admin/users', [UserController::class, 'index']);
+
+});
+
+
+Route::get('/force-login/{user_id}', function($user_id) {
+    $user = User::findOrFail($user_id);
+    Auth::login($user);

@@ -1,17 +1,18 @@
 import { defineConfig, loadEnv } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import react from '@vitejs/plugin-react';
- 
+
 export default ({ mode }) => {
     const { APP_URL } = loadEnv(mode, process.cwd(), '')
- 
+
     return defineConfig({
         plugins: [
             laravel({
                 input: [
                     'resources/css/app.scss',
                     'resources/js/partners.jsx',
-                    'resources/js/latest-books.js'
+                    'resources/js/latest-books.js',
+                    'resources/js/user-list/main.jsx',
                 ],
                 refresh: true,
             }),
